@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    overflow: hidden;
+}
+#scene{
+    width: 100%;
+    height: 100%;
+  position: relative;
+}
+.sun{
+    z-index: -2;
+    position:relative;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+.sun img {
+    width: 10%;
+    position:absolute;
+    display: block;
+    right: 5%;
+    top: 5%;
+    opacity: .9;
+}
+.sea{
+    z-index: -1;
+    position:relative;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+.sea img {
+    position:absolute;
+    display: block;
+    width: 150%;
+    height: 30%;
+    left:-200px;
+    bottom: -20px;
+}
+.once{
+    animation: wave 2s infinite;
+}
+.twice{
+    bottom: -50px;
+}
+.twice2{
+    bottom: -180px;
+    animation: wave 3s infinite;
+}
+.twice img{
+    width: 170%;
+}
+.island{
+    z-index: -2;
+    position:relative;
+    width: 100vw;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+}
+.wrapper-island{
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    left: 10%;
+    bottom: -2%;
+}
+.wrapper-island img{
+    position: absolute;
+    display: block;
+}
+.ostrov{
+    width: 140%;
+    bottom: 0;
+    left: 0;
+}
+.palm{
+    width: 100%;
+    z-index: -3;
+    bottom: 20%;
+    left: 20%;
+}
+.wrapper-birds{
+    position: relative;
+    height: 40%;
+    width: 100%;
+    overflow: hidden;
+}
+.wrapper-birds iframe{
+    position: absolute;
+}
+.wrapper-birds iframe:nth-child(1){
+    top: 0;
+}
+.wrapper-birds iframe:nth-child(3){
+    top: 40px;
+    left: 20px;
+}
+
+.bird{
+    width: 50px;
+    animation: birdes 20s infinite;
+}
+.plane{
+    position: relative;
+    width: 600px;
+    animation: airMoving 10s  infinite;
+}
+
+@keyframes birdes {
+    from{
+        transform: translateX(-10px);
+    }
+    to{
+        transform: translateX(100vw);
+    }
+    
+}
+@keyframes wave {
+
+    50%{
+        transform: translateX(70px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+
+    
+}
+
+@keyframes airMoving {
+0%{
+    transform: translateX(-500px);
+}
+    100%{
+        transform: translateX(100vw);
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+    .ostrov{
+        width: 140%;
+        bottom: 60px;
+        left: 0;
+    }
+}
+@media screen and (max-width: 420px) {
+    .sea img {
+        position:absolute;
+        display: block;
+        width: 250%;
+        height: 30%;
+        left:-200px;
+        bottom: -20px;
+    }
+}
